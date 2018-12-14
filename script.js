@@ -2,11 +2,12 @@ var t = 0;
 var tt = 0;
 var ttt = 0;
 const magicBall = document.getElementById('magic-ball');
-const tetrahedron = document.getElementById('tetrahedron');
+const tetra = document.getElementById('tetrahedron');
 const perpText = document.getElementById('perp-text');
-const text = document.getElementById('text');
+const words = document.getElementById('text');
 
 magicBall.addEventListener('click', shake);
+magicBall.addEventListener('touchstart', shake);
 
 function textUpdate() {
     let fortune = Math.ceil(Math.random() * 20);
@@ -36,83 +37,83 @@ function textUpdate() {
 
 
     if (fortune === 1) {
-        text.innerHTML = f1;
+        words.innerHTML = f1;
         perpText.innerHTML =f1;
     }
     if (fortune === 2) {
-        text.innerHTML = f2;
+        words.innerHTML = f2;
         perpText.innerHTML = f2;
     }
     if (fortune === 3) {
-        text.innerHTML = f3;
+        words.innerHTML = f3;
         perpText.innerHTML = f3;
     }
     if (fortune === 4) {
-        text.innerHTML = f4;
+        words.innerHTML = f4;
         perpText.innerHTML = f4;
     }
     if (fortune === 5) {
-        text.innerHTML = f5;
+        words.innerHTML = f5;
         perpText.innerHTML = f5;
     }
     if (fortune === 6) {
-        text.innerHTML = f6;
+        words.innerHTML = f6;
         perpText.innerHTML = f6;
     }
     if (fortune === 7) {
-        text.innerHTML = f7;
+        words.innerHTML = f7;
         perpText.innerHTML = f7;
     }
     if (fortune === 8) {
-        text.innerHTML = f8;
+        words.innerHTML = f8;
         perpText.innerHTML = f8;
     }
     if (fortune === 9) {
-        text.innerHTML = f9;
+        words.innerHTML = f9;
         perpText.innerHTML = f9;
     }
     if (fortune === 10) {
-        text.innerHTML = f10;
+        words.innerHTML = f10;
         perpText.innerHTML = f10;
     }
     if (fortune === 11) {
-        text.innerHTML = f11;
+        words.innerHTML = f11;
         perpText.innerHTML = f11;
     }
     if (fortune === 12) {
-        text.innerHTML = f12;
+        words.innerHTML = f12;
         perpText.innerHTML = f12;
     }
     if (fortune === 13) {
-        text.innerHTML = f13;
+        words.innerHTML = f13;
         perpText.innerHTML = f13;
     }
     if (fortune === 14) {
-        text.innerHTML = f14;
+        words.innerHTML = f14;
         perpText.innerHTML = f14;
     }
     if (fortune === 15) {
-        text.innerHTML = f15;
+        words.innerHTML = f15;
         perpText.innerHTML = f15;
     }
     if (fortune === 16) {
-        text.innerHTML = f16;
+        words.innerHTML = f16;
         perpText.innerHTML = f16;
     }
     if (fortune === 17) {
-        text.innerHTML = f17;
+        words.innerHTML = f17;
         perpText.innerHTML = f17;
     }
     if (fortune === 18) {
-        text.innerHTML = f18;
+        words.innerHTML = f18;
         perpText.innerHTML = f18;
     }
     if (fortune === 19) {
-        text.innerHTML = f19;
+        words.innerHTML = f19;
         perpText.innerHTML = f19;
     }
     if (fortune === 20) {
-        text.innerHTML = f20;
+        words.innerHTML = f20;
         perpText.innerHTML = f20;
     }
 }
@@ -130,7 +131,7 @@ function textToggle() {
 }
 
 function tetrahedronToggle() {
-    tetrahedron.classList.toggle('tetrahedron__active');
+    tetra.classList.toggle('tetrahedron__active');
 }
 
 function ballToggle() {

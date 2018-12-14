@@ -1,13 +1,11 @@
-var t = 0;
-var tt = 0;
-var ttt = 0;
 const magicBall = document.getElementById('magic-ball');
 const tetra = document.getElementById('tetrahedron');
 const perpText = document.getElementById('perp-text');
 const words = document.getElementById('text');
 
-magicBall.addEventListener('click', shake);
-magicBall.addEventListener('touchstart', shake);
+['click', 'touchstart'].forEach(function(e) {
+    magicBall.addEventListener(e, shake);
+});
 
 function textUpdate() {
     let fortune = Math.ceil(Math.random() * 20);
@@ -33,8 +31,6 @@ function textUpdate() {
     f18 = `<p class="answer"><br><br>My<br>sources<br>say no.<br><br></p>`;
     f19 = `<p class="answer"><br><br>Outlook<br>not so good.<br><br></p>`;
     f20 = `<p class="answer"><br><br>Very<br>doubtful.<br><br></p>`;
-
-
 
     if (fortune === 1) {
         words.innerHTML = f1;
@@ -116,42 +112,44 @@ function textUpdate() {
         words.innerHTML = f20;
         perpText.innerHTML = f20;
     }
-}
+};
 
-function allowClickAgain() {
+function allowEventsAgain() {
     magicBall.addEventListener('click', shake);
-}
+};
 
 function perpTextToggle() {
     perpText.classList.toggle('perp-text__active');
-}
+};
 
 function textToggle() {
     text.classList.toggle('text__active');
-}
+};
 
 function tetrahedronToggle() {
     tetra.classList.toggle('tetrahedron__active');
-}
+};
 
 function ballToggle() {
     magicBall.classList.toggle('magic-ball__2');
-}
+};
 
 function shake() {
-    magicBall.removeEventListener('click', shake);
-    ballToggle();
-    tetrahedronToggle();
-    textToggle();
-    perpTextToggle();
-    setTimeout(textUpdate, 3500);
-    setTimeout(ballToggle, 4500);
-    setTimeout(tetrahedronToggle, 6000);
-    setTimeout(textToggle, 6000);
-    setTimeout(perpTextToggle, 6000);
-    setTimeout(allowClickAgain, 10500);
-}
+    ['click', 'touchstart'].forEach(function(e) { //Immediately remove both event listeners.
+        magicBall.removeEventListener(e, shake);
+    });
+    ballToggle(); //Toggle the class of the ball from the opacity 0 to the opacity 1 class, which has a 4s animation applied, covering the black 8 ball behind them (toggling classes won't work for radial gradient property, so this is the workaround).
+    tetrahedronToggle(); //Toggle the class of the tetrahedron from the (non existent) inactive class to the active class, which has 6s animation applied.
+    textToggle(); //Toggle between the active text class, which has 6s animation applied, and the (non existent) inactive text class.
+    perpTextToggle(); //Toggle between the active perpendicular text class, which has 6s animation applied, and the (non existent) inactive perpendicular text class.
+    setTimeout(textUpdate, 3500); //At 3500ms, while text and perpendicular text are spinning, switch their innerHTMLs to 1 of the 20 strings at random.
+    setTimeout(ballToggle, 4500); //At 4500ms toggle the class of the ball back from the opacity 1 to the opacity 0 class, which has a 7s animation applied, revealing once again the black 8 ball behind them.
+    setTimeout(tetrahedronToggle, 6000); //At 6000ms toggle back to the (non existent) inactive tetrahedron class so that it can toggle to active again on next event fire.
+    setTimeout(textToggle, 6000); //At 6000ms toggle back to the (non existent) inactive text class so that it can toggle to active again on next event fire.
+    setTimeout(perpTextToggle, 6000); //At 6000ms toggle back to the (non existent) inactive perpendicular text class so that it can toggle to active again on next event fire.
+    setTimeout(allowEventsAgain, 10500); //after 10500ms allow event listeners again.
+};
 
-perpTextToggle();
-textToggle();
+textToggle(); //As soon as the script loads toggle the text to the (non existent) inactive class.
+perpTextToggle(); //As soon as the script loads toggle the perpendicular text to the (non existent) inactive class.
 text.innerHTML = `<p class="intro">8</p>`;

@@ -1,6 +1,18 @@
 body {
     background: #000;
 }
+
+#tap-radiation {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    border: 0px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0;
+
+}
+
 #magic-ball-background {
     position: absolute;
     margin-left: 50%;
@@ -151,3 +163,9 @@ p.answer {
 @keyframes perp-flipText {
     to { transform: rotateZ(10800deg) rotateY(3690deg) rotateX(-1800deg); }
     }
+
+@keyframes radiate {
+    from { opacity: 1; }
+    to { transform: scaleX(100) scaleY(100);
+    opacity: 0; }
+}

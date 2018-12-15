@@ -2,10 +2,24 @@ const magicBall = document.getElementById('magic-ball');
 const tetra = document.getElementById('tetrahedron');
 const perpText = document.getElementById('perp-text');
 const words = document.getElementById('text');
+const radiate = document.getElementById('tap-radiation');
 
 ['click', 'touchstart'].forEach(function(e) {
     magicBall.addEventListener(e, shake);
+    magicBall.addEventListener(e, tapRadiation);
 });
+
+function resetRadate() {
+    radiate.style.animation = "";
+};
+
+function tapRadiation(e) {
+    radiate.style.left = `${e.clientX + window.pageXOffset}px`;
+    radiate.style.top = `${e.clientY + window.pageYOffset}px`;
+    radiate.style.animation = "radiate 1s cubic-bezier(0,1,0,1)";
+    radiate.style.animationFillMode = "forwards";
+};
+
 
 function textUpdate() {
     let fortune = Math.ceil(Math.random() * 20);
@@ -148,6 +162,7 @@ function shake() {
     setTimeout(textToggle, 6000); //At 6000ms toggle back to the (non existent) inactive text class so that it can toggle to active again on next event fire.
     setTimeout(perpTextToggle, 6000); //At 6000ms toggle back to the (non existent) inactive perpendicular text class so that it can toggle to active again on next event fire.
     setTimeout(allowEventsAgain, 10500); //after 10500ms allow event listeners again.
+    setTimeout(resetRadate, 10500);
 };
 
 textToggle(); //As soon as the script loads toggle the text to the (non existent) inactive class.

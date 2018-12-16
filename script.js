@@ -4,7 +4,6 @@ const perpText = document.getElementById('perp-text');
 const words = document.getElementById('text');
 const radiate = document.getElementById('tap-radiation');
 
-
 function removeEvents() {
     ['click', 'touchstart'].forEach(function(e) { //Immediately remove both click and touchstart event listeners from both the tetra and the ball.
         tetra.removeEventListener(e, resetBall);
@@ -30,7 +29,6 @@ function tapRadiation(e) {
     radiate.style.animation = `radiate 10.5s cubic-bezier(0,1,0,1)`;
     radiate.style.animationFillMode = `forwards`;
 };
-
 
 function textUpdate() {
     let fortune = Math.ceil(Math.random() * 20);

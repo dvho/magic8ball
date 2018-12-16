@@ -4,20 +4,31 @@ const perpText = document.getElementById('perp-text');
 const words = document.getElementById('text');
 const radiate = document.getElementById('tap-radiation');
 
-['click', 'touchstart'].forEach(function(e) {
-    magicBall.addEventListener(e, shake);
-    magicBall.addEventListener(e, tapRadiation);
-});
+
+function removeEvents() {
+    ['click', 'touchstart'].forEach(function(e) { //Immediately remove both click and touchstart event listeners from both the tetra and the ball.
+        tetra.removeEventListener(e, resetBall);
+        magicBall.removeEventListener(e, shake);
+    });
+};
+
+function allowEvents() {
+    ['click', 'touchstart'].forEach(function(e) { //Allow both click and touchstart event listeners for the tetra's reset, and for the ball's shake and radiate.
+        tetra.addEventListener(e, resetBall);
+        magicBall.addEventListener(e, shake);
+        magicBall.addEventListener(e, tapRadiation);
+    });
+};
 
 function resetRadate() {
-    radiate.style.animation = "";
+    radiate.style.animation = ``;
 };
 
 function tapRadiation(e) {
     radiate.style.left = `${e.clientX + window.pageXOffset}px`;
     radiate.style.top = `${e.clientY + window.pageYOffset}px`;
-    radiate.style.animation = "radiate 1s cubic-bezier(0,1,0,1)";
-    radiate.style.animationFillMode = "forwards";
+    radiate.style.animation = `radiate 10.5s cubic-bezier(0,1,0,1)`;
+    radiate.style.animationFillMode = `forwards`;
 };
 
 
@@ -128,10 +139,6 @@ function textUpdate() {
     }
 };
 
-function allowEventsAgain() {
-    magicBall.addEventListener('click', shake);
-};
-
 function perpTextToggle() {
     perpText.classList.toggle('perp-text__active');
 };
@@ -148,10 +155,13 @@ function ballToggle() {
     magicBall.classList.toggle('magic-ball__2');
 };
 
+function resetBall() {
+    text.innerHTML = `<p class="intro">8</p>`;
+    perpText.innerHTML = '';
+}
+
 function shake() {
-    ['click', 'touchstart'].forEach(function(e) { //Immediately remove both event listeners.
-        magicBall.removeEventListener(e, shake);
-    });
+    removeEvents(); //Remove both click and touchstart event listeners that trigger both radiate and shake for the ball, and both click and touchstart event listeners that trigger reset for the tetra.
     ballToggle(); //Toggle the class of the ball from the opacity 0 to the opacity 1 class, which has a 4s animation applied, covering the black 8 ball behind them (toggling classes won't work for radial gradient property, so this is the workaround).
     tetrahedronToggle(); //Toggle the class of the tetrahedron from the (non existent) inactive class to the active class, which has 6s animation applied.
     textToggle(); //Toggle between the active text class, which has 6s animation applied, and the (non existent) inactive text class.
@@ -161,10 +171,11 @@ function shake() {
     setTimeout(tetrahedronToggle, 6000); //At 6000ms toggle back to the (non existent) inactive tetrahedron class so that it can toggle to active again on next event fire.
     setTimeout(textToggle, 6000); //At 6000ms toggle back to the (non existent) inactive text class so that it can toggle to active again on next event fire.
     setTimeout(perpTextToggle, 6000); //At 6000ms toggle back to the (non existent) inactive perpendicular text class so that it can toggle to active again on next event fire.
-    setTimeout(allowEventsAgain, 10500); //after 10500ms allow event listeners again.
+    setTimeout(allowEvents, 10500); //after 10500ms allow event listeners again.
     setTimeout(resetRadate, 10500);
 };
 
+allowEvents(); //As soon as the script loads fire up all event listeners.
 textToggle(); //As soon as the script loads toggle the text to the (non existent) inactive class.
 perpTextToggle(); //As soon as the script loads toggle the perpendicular text to the (non existent) inactive class.
-text.innerHTML = `<p class="intro">8</p>`;
+resetBall(); //As soon as the script loads set the text to '8' and perpText to an empty string.

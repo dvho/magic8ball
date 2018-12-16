@@ -4,13 +4,12 @@ body {
 
 #tap-radiation {
     position: absolute;
-    height: 1px;
-    width: 1px;
-    border: 0px;
+    height: 4px;
+    width: 4px;
+    border: 0;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #ff6000;
     opacity: 0;
-
 }
 
 #magic-ball-background {
@@ -165,7 +164,9 @@ p.answer {
     }
 
 @keyframes radiate {
-    from { opacity: 1; }
-    to { transform: scaleX(100) scaleY(100);
-    opacity: 0; }
+    from { transform: scale(.01) translateX(-4px) translateY(-4px);
+        opacity: 1; }
+    to { transform: scale(1) translateX(-2px) translateY(-2px);
+         opacity: 0;
+     box-shadow: 0px 0px 250px 200px #ff0000, 0px 0px 250px 200px #ffff00, 0px 0px 250px 50px #0000ff; }
 }

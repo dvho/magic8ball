@@ -4,11 +4,11 @@ const perpText = document.getElementById('perp-text');
 const words = document.getElementById('text');
 const radiate = document.getElementById('tap-radiation');
 
-
 function removeEvents() {
     ['click', 'touchstart'].forEach(function(e) { //Immediately remove both click and touchstart event listeners from both the tetra and the ball.
         tetra.removeEventListener(e, resetBall);
         magicBall.removeEventListener(e, shake);
+        magicBall.removeEventListener(e, tapRadiation);
     });
 };
 
@@ -30,7 +30,6 @@ function tapRadiation(e) {
     radiate.style.animation = `radiate 10.5s cubic-bezier(0,1,0,1)`;
     radiate.style.animationFillMode = `forwards`;
 };
-
 
 function textUpdate() {
     let fortune = Math.ceil(Math.random() * 20);
@@ -161,11 +160,12 @@ function resetBall() {
 }
 
 function shake() {
-    removeEvents(); //Remove both click and touchstart event listeners that trigger both radiate and shake for the ball, and both click and touchstart event listeners that trigger reset for the tetra.
+
     ballToggle(); //Toggle the class of the ball from the opacity 0 to the opacity 1 class, which has a 4s animation applied, covering the black 8 ball behind them (toggling classes won't work for radial gradient property, so this is the workaround).
     tetrahedronToggle(); //Toggle the class of the tetrahedron from the (non existent) inactive class to the active class, which has 6s animation applied.
     textToggle(); //Toggle between the active text class, which has 6s animation applied, and the (non existent) inactive text class.
     perpTextToggle(); //Toggle between the active perpendicular text class, which has 6s animation applied, and the (non existent) inactive perpendicular text class.
+    setTimeout(removeEvents, .001); //Remove both click and touchstart event listeners that trigger both radiate and shake for the ball, and both click and touchstart event listeners that trigger reset for the tetra. For some reason radiate event can't be removed at the time of shake without not working, so all are on a setTimeout of 1 millionth of a second. Removal of event listener from ball for radiate wouldn't have been necessary but radiate.style.left and radiate.style.top continue to update in the background and cause incorrect inputs on mobile Safari. 
     setTimeout(textUpdate, 3500); //At 3500ms, while text and perpendicular text are spinning, switch their innerHTMLs to 1 of the 20 strings at random.
     setTimeout(ballToggle, 4500); //At 4500ms toggle the class of the ball back from the opacity 1 to the opacity 0 class, which has a 7s animation applied, revealing once again the black 8 ball behind them.
     setTimeout(tetrahedronToggle, 6000); //At 6000ms toggle back to the (non existent) inactive tetrahedron class so that it can toggle to active again on next event fire.

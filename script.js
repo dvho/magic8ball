@@ -8,7 +8,6 @@ function removeEvents() {
     ['click', 'touchstart'].forEach(function(e) { //Immediately remove both click and touchstart event listeners from both the tetra and the ball.
         tetra.removeEventListener(e, resetBall);
         magicBall.removeEventListener(e, shake);
-        magicBall.removeEventListener(e, tapRadiation);
     });
 };
 

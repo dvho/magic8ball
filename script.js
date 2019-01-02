@@ -5,18 +5,18 @@ const words = document.getElementById('text');
 const radiate = document.getElementById('tap-radiation');
 
 function removeEvents() {
-    ['click', 'touchstart'].forEach(function(e) { //Immediately remove both click and touchstart event listeners from both the tetra and the ball.
-        tetra.removeEventListener(e, resetBall);
-        magicBall.removeEventListener(e, shake);
-    });
+
+        tetra.removeEventListener('click', resetBall);
+        magicBall.removeEventListener('click', shake);
+    
 };
 
 function allowEvents() {
-    ['click', 'touchstart'].forEach(function(e) { //Allow both click and touchstart event listeners for the tetra's reset, and for the ball's shake and radiate.
-        tetra.addEventListener(e, resetBall);
-        magicBall.addEventListener(e, shake);
-        magicBall.addEventListener(e, tapRadiation);
-    });
+
+        tetra.addEventListener('click', resetBall);
+        magicBall.addEventListener('click', shake);
+        magicBall.addEventListener('click', tapRadiation);
+
 };
 
 function resetRadate() {

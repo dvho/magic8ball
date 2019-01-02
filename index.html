@@ -5,24 +5,24 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body style="touch-action:manipulation;">
-    <div id="magic-ball-background" style="touch-action:manipulation;">
+<body>
+    <div id="magic-ball-background">
     </div>
-    <div id="tap-radiation" style="touch-action:manipulation;">
+    <div id="tap-radiation">
     </div>
-    <div id="magic-ball" class="magic-ball__1" style="touch-action:manipulation;">
+    <div id="magic-ball" class="magic-ball__1" style="touch-action:manipulation;"> <!-- touch-action style had to be placed inline (not as a class in the stylesheet) because JS is using class toggle method -->
     </div>
-    <div id="ball-view" style="touch-action:manipulation;">
-        <div id="text" class="text__active" style="touch-action:manipulation;">
+    <div id="ball-view">
+        <div id="text" class="text__active">
         </div>
-        <div id="perp-text" class="perp-text__active" style="touch-action:manipulation;">
+        <div id="perp-text" class="perp-text__active">
         </div>
     </div>
-    <div id="tetrahedron" class="tetrahedron__inactive" style="touch-action:manipulation;">
-		<figure class="front" style="touch-action:manipulation;"><div class="triangle"></div></figure>
-		<figure class="left" style="touch-action:manipulation;"><div class="triangle"></div></figure>
-		<figure class="right" style="touch-action:manipulation;"><div class="triangle"></div></figure>
-		<figure class="bottom" style="touch-action:manipulation;"><div class="triangle"></div></figure>
+    <div id="tetrahedron" class="tetrahedron__inactive" style="touch-action:manipulation;"> <!-- touch-action style had to be placed inline (not as a class in the stylesheet) because JS is using class toggle method -->
+		<figure class="front"><div class="triangle"></div></figure>
+		<figure class="left"><div class="triangle"></div></figure>
+		<figure class="right"><div class="triangle"></div></figure>
+		<figure class="bottom"><div class="triangle"></div></figure>
     </div>
     <script src="script.js"></script>
 </body>

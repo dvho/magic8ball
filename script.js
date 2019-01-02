@@ -5,18 +5,14 @@ const words = document.getElementById('text');
 const radiate = document.getElementById('tap-radiation');
 
 function removeEvents() {
-
         tetra.removeEventListener('click', resetBall);
         magicBall.removeEventListener('click', shake);
-    
 };
 
 function allowEvents() {
-
         tetra.addEventListener('click', resetBall);
         magicBall.addEventListener('click', shake);
         magicBall.addEventListener('click', tapRadiation);
-
 };
 
 function resetRadate() {

@@ -10,7 +10,7 @@
     </div>
     <div id="tap-radiation">
     </div>
-    <div id="magic-ball" class="magic-ball__1" style="touch-action:manipulation;"> <!-- touch-action style had to be placed inline (not as a class in the stylesheet) because JS is using class toggle method -->
+    <div id="magic-ball" class="magic-ball__1" style="touch-action:manipulation;"> <!-- touch-action:manipulation had to be placed inline (not as a class in the stylesheet) because JS is using class toggle method. touch-action:manipulation is what prevents the 300ms click delay on mobile, which would otherwise be waiting to see if the click was going to be a double click -->
     </div>
     <div id="ball-view">
         <div id="text" class="text__active">
@@ -18,7 +18,7 @@
         <div id="perp-text" class="perp-text__active">
         </div>
     </div>
-    <div id="tetrahedron" class="tetrahedron__inactive" style="touch-action:manipulation;"> <!-- touch-action style had to be placed inline (not as a class in the stylesheet) because JS is using class toggle method -->
+    <div id="tetrahedron" class="tetrahedron__inactive" style="touch-action:manipulation;"> <!-- touch-action:manipulation had to be placed inline (not as a class in the stylesheet) because JS is using class toggle method. touch-action:manipulation is what prevents the 300ms click delay on mobile, which would otherwise be waiting to see if the click was going to be a double click -->
 		<figure class="front"><div class="triangle"></div></figure>
 		<figure class="left"><div class="triangle"></div></figure>
 		<figure class="right"><div class="triangle"></div></figure>

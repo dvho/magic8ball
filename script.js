@@ -7,6 +7,7 @@ const radiate = document.getElementById('tap-radiation');
 function removeEvents() {
         tetra.removeEventListener('click', resetBall);
         magicBall.removeEventListener('click', shake);
+        magicBall.removeEventListener('click', tapRadiation);
 };
 
 function allowEvents() {
@@ -155,7 +156,7 @@ function resetBall() {
 }
 
 function shake() {
-    removeEvents(); //Remove both click and touchstart event listeners that trigger both radiate and shake for the ball, and both click and touchstart event listeners that trigger reset for the tetra.
+    setTimeout(removeEvents, 5); //After 5ms, remove click event listener that triggers both radiate and shake for the ball, and click event listener that triggers reset for the tetra.
     ballToggle(); //Toggle the class of the ball from the opacity 0 to the opacity 1 class, which has a 4s animation applied, covering the black 8 ball behind them (toggling classes won't work for radial gradient property, so this is the workaround).
     tetrahedronToggle(); //Toggle the class of the tetrahedron from the (non existent) inactive class to the active class, which has 6s animation applied.
     textToggle(); //Toggle between the active text class, which has 6s animation applied, and the (non existent) inactive text class.

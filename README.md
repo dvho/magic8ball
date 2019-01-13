@@ -6,7 +6,7 @@ Magic 8 Ball is an emulation of the illustrious toy created entirely in HTML/CSS
 _________________________
 
 #### How to Use
-Magic 8 Ball loads instantly in any browser. Ask your question and tap or click Magic 8 Ball to discharge energy and cause it to smolder. Its wisdom will be unlocked and you'll learn your fate.
+Magic 8 Ball loads instantly in any browser. Ask your question and tap or click Magic 8 Ball to discharge energy into it, causing it to smolder. Its wisdom will be unlocked and you will learn your fate.
 _________________________
 
 #### Features

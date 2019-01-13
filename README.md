@@ -1,12 +1,12 @@
 # Magic 8 Ball
-Magic 8 Ball is an emulation of the illustrious toy created entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries or dependencies.
+_Magic 8 Ball_ is an emulation of the illustrious toy I designed and coded entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries or any dependencies.
 
 <img src="https://user-images.githubusercontent.com/45696445/51088793-2cdd1200-1732-11e9-8712-033dbf5062bb.jpg">
 
 _________________________
 
 #### How to Use
-Magic 8 Ball loads instantly in any browser. Ask your question and tap or click Magic 8 Ball to discharge energy into it, causing it to smolder. Its wisdom will be unlocked and you will learn your fate.
+_Magic 8 Ball_ loads instantly in any browser. Ask your question and tap or click _Magic 8 Ball_ to discharge energy into it, causing it to smolder. Its wisdom will be unlocked and you will learn your fate.
 _________________________
 
 #### Features
@@ -16,7 +16,7 @@ _________________________
 _________________________
 
 #### Motivation
-Developed in the 1950s and manufactured by Mattel, this renowned toy has stood the test of time spanning almost 4 generations. Predating Eisenhower's Interstate Highway System when most children's toys were made of wood and barn paint, Magic 8 Ball continues to thrive in the era of the Nintendo Switch. I decided that this iconic keystone of American childhood deserves to be immortalized in the universality of JavaScript with an accurate emulation.
+Developed in the 1950s and manufactured by Mattel, this renowned toy has stood the test of time spanning almost 4 generations. Predating Eisenhower's Interstate Highway System when most children's toys were made of wood and barn paint, _Magic 8 Ball_ continues to thrive in the era of the _Nintendo Switch_. I decided that this iconic keystone of American childhood deserves to be immortalized in the universality of JavaScript with an accurate emulation.
 _________________________
 
 #### Notes

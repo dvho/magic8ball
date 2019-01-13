@@ -1,12 +1,12 @@
 # Magic 8 Ball
-Magic 8 Ball is an emulation of the illustrious toy created entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries, or dependencies.
+Magic 8 Ball is an emulation of the illustrious toy created entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries or dependencies.
 
-<img src="https://user-images.githubusercontent.com/45696445/51088793-2cdd1200-1732-11e9-8712-033dbf5062bb.jpg" width=700>
+<img src="https://user-images.githubusercontent.com/45696445/51088793-2cdd1200-1732-11e9-8712-033dbf5062bb.jpg">
 
 _________________________
 
 #### How to Use
-Magic 8 Ball loads instantly in any browser. Ask your question and tap or click Magic 8 Ball to discharge your energy and cause it to smolder. Its wisdom witll be unlocked and you'll learn your fate.
+Magic 8 Ball loads instantly in any browser. Ask your question and tap or click Magic 8 Ball to discharge your energy and cause it to smolder. Its wisdom will be unlocked and you'll learn your fate.
 _________________________
 
 #### Features

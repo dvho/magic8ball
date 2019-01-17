@@ -1,7 +1,7 @@
 # Magic 8 Ball
 _Magic 8 Ball_ is an emulation of the illustrious toy I designed and coded entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries or any dependencies.
 
-<img src="https://user-images.githubusercontent.com/45696445/51088793-2cdd1200-1732-11e9-8712-033dbf5062bb.jpg">
+<img src="https://user-images.githubusercontent.com/45696445/51330449-85b7ed80-1a45-11e9-8fd8-d02d7911cdc4.gif">
 
 _________________________
 
